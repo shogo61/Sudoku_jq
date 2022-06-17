@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="start">
+        <button>始める</button>
+    </div>
+    <table class="task" align="center" alt="本番用">
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td class="right">4</td>
+            <td>6</td>
+            <td></td>
+            <td class="right">8</td>
+            <td>2</td>
+            <td>7</td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td></td>
+            <td class="right">2</td>
+            <td>4</td>
+            <td></td>
+            <td class="right">9</td>
+            <td>1</td>
+            <td></td>
+            <td>8</td>
+            <th></th>
+        </tr>
+        <tr class="btm">
+            <td>6</td>
+            <td>8</td>
+            <td class="right"></td>
+            <td>2</td>
+            <td></td>
+            <td class="right">1</td>
+            <td></td>
+            <td>3</td>
+            <td>5</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>5</td>
+            <td class="right">3</td>
+            <td></td>
+            <td></td>
+            <td class="right"></td>
+            <td>7</td>
+            <td>4</td>
+            <td>2</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="right"></td>
+            <td></td>
+            <td></td>
+            <td class="right"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr class="btm">
+            <td>1</td>
+            <td>2</td>
+            <td class="right">8</td>
+            <td></td>
+            <td></td>
+            <td class="right"></td>
+            <td>6</td>
+            <td>5</td>
+            <td>3</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>7</td>
+            <td class="right"></td>
+            <td>9</td>
+            <td></td>
+            <td class="right">2</td>
+            <td></td>
+            <td>1</td>
+            <td>6</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td></td>
+            <td class="right">1</td>
+            <td>5</td>
+            <td></td>
+            <td class="right">3</td>
+            <td>9</td>
+            <td></td>
+            <td>7</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>9</td>
+            <td class="right">6</td>
+            <td>1</td>
+            <td></td>
+            <td class="right">7</td>
+            <td>5</td>
+            <td>2</td>
+            <td></td>
+            <th></th>
+        </tr>
+        <tr class="ths">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table> 
+    <!-- <table class="task" align="center" alt="テスト用">
+        <tr>
+            <td>5</td>
+            <td>1</td>
+            <td class="right">4</td>
+            <td>6</td>
+            <td>3</td>
+            <td class="right">8</td>
+            <td>2</td>
+            <td>7</td>
+            <td>9</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td class="right">2</td>
+            <td>4</td>
+            <td>5</td>
+            <td class="right">9</td>
+            <td>1</td>
+            <td>6</td>
+            <td>8</td>
+            <th></th>
+        </tr>
+        <tr class="btm">
+            <td>6</td>
+            <td>8</td>
+            <td class="right">9</td>
+            <td>2</td>
+            <td>7</td>
+            <td class="right">1</td>
+            <td>4</td>
+            <td>3</td>
+            <td>5</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>5</td>
+            <td class="right">3</td>
+            <td>8</td>
+            <td>1</td>
+            <td class="right">6</td>
+            <td>7</td>
+            <td>4</td>
+            <td>2</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>6</td>
+            <td class="right">7</td>
+            <td></td>
+            <td></td>
+            <td class="right"></td>
+            <td>8</td>
+            <td>9</td>
+            <td>1</td>
+            <th></th>
+        </tr>
+        <tr class="btm">
+            <td>1</td>
+            <td>2</td>
+            <td class="right">8</td>
+            <td>7</td>
+            <td>9</td>
+            <td class="right">4</td>
+            <td>6</td>
+            <td>5</td>
+            <td>3</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>7</td>
+            <td class="right">5</td>
+            <td>9</td>
+            <td>4</td>
+            <td class="right">2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>6</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>4</td>
+            <td class="right">1</td>
+            <td>5</td>
+            <td>6</td>
+            <td class="right">3</td>
+            <td>9</td>
+            <td>8</td>
+            <td>7</td>
+            <th></th>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>9</td>
+            <td class="right">6</td>
+            <td>1</td>
+            <td>8</td>
+            <td class="right">7</td>
+            <td>5</td>
+            <td>2</td>
+            <td>4</td>
+            <th></th>
+        </tr>
+        <tr class="ths">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table> -->
+    <p>ブロックごとの合計</p>
+    <table class="block">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+    <br clear="all">
+    <div class="btns" align="center">
+        <button>0</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+    </div>
+</body>
+</html>
