@@ -123,6 +123,7 @@ $(function(){
         }
         
         //完了したかの判定
+        //要訂正
         var cnt=0;
         for(var i=0;i<18;i++){
             if(($("table th").eq(i).text())==45){
